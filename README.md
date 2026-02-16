@@ -1,75 +1,45 @@
-# CogniSupport: AI-Driven IT Helpdesk
+# CogniSupport 🧠
+> **AI-Driven IT Helpdesk & Ticketing System**
 
-CogniSupport is a modern, intelligent IT helpdesk system that automates ticket classification and prioritization using Machine Learning. Built with a **React (Vite)** frontend and **FastAPI** backend, it provides real-time "Live AI Insights" to users before they even submit a ticket, streamlining support workflows.
+CogniSupport is a modern, intelligent helpdesk that automates ticket classification using Machine Learning. It provides **real-time AI insights** to users before they submit a ticket, ensuring requests are routed to the right team instantly.
 
-## 🚀 Features
+---
 
-- **Live AI Insight**: Real-time category and priority prediction as users type (Debounced).
-- **Auto-Triage**: Automatically routes tickets to Hardware, Network, Software, Security, or Account Access teams.
-- **Urgency Detection**: NLP-based keyword analysis determines ticket priority (Low/Medium/High).
-- **Dashboard**: Admin view to track incoming tickets and performance stats.
-- **Production Ready**: Containerized with Docker and served via a high-performance ASGI server.
+## ✨ Features
+- **🔮 Live AI Diagnostics**: Predicts issue category and priority *while typing*.
+- **⚡ Auto-Triage**: Automatically routes tickets (Hardware, Network, Software, etc.).
+- **🛡️ Secure & Scalable**: Decoupled architecture with FastAPI & React.
+- **📊 Admin Dashboard**: Real-time tracking of ticket flow and team performance.
+
+## 🚀 Quick Start
+### Option 1: Docker (Recommended)
+Run the entire stack with a single command:
+```bash
+docker-compose up --build
+```
+- **App**: `http://localhost:5173`
+- **API**: `http://localhost:8000/docs`
+
+### Option 2: Manual Setup
+**Backend** (Python 3.10+)
+```bash
+cd backend
+pip install -r requirements.txt
+python ml_engine.py  # Train the ML model
+uvicorn main:app --reload
+```
+
+**Frontend** (Node.js 18+)
+```bash
+cd frontend
+npm install
+npm run dev
+```
 
 ## 🛠️ Tech Stack
+- **Frontend**: React 18, Vite, Tailwind CSS (IBM Design Language)
+- **Backend**: FastAPI (Python), Scikit-learn (Machine Learning)
+- **Database**: SQLite (Dev) / PostgreSQL (Prod)
 
-### Backend
-- **FastAPI (Python)**: High-performance, asynchronous web framework.
-- **Scikit-learn**: TF-IDF Vectorizer + LinearSVC pipeline for efficient text classification.
-- **Joblib**: Model serialization.
-- **Pydantic**: Robust data validation.
-
-### Frontend
-- **React 18 + Vite**: Lightning-fast frontend tooling.
-- **Tailwind CSS**: Utility-first styling with a custom "IBM Blue" enterprise theme.
-- **Axios**: Efficient HTTP client for API integration.
-
-## 🔧 Installation & Setup
-
-### Prerequisites
-- Docker & Docker Compose (Recommended)
-- OR Python 3.10+ and Node.js 18+
-
-### Option 1: Docker (Single Command)
-1. Build and run the container:
-   ```bash
-   docker build -t cognisupport .
-   docker run -p 8000:8000 cognisupport
-   ```
-2. Open `http://localhost:8000` to view the app.
-
-### Option 2: Local Development (WSL2/Linux/Mac)
-
-**Backend:**
-1. Navigate to `backend/`:
-   ```bash
-   cd backend
-   pip install -r requirements.txt
-   ```
-2. Train the model:
-   ```bash
-   python ml_engine.py
-   ```
-3. Start the server:
-   ```bash
-   uvicorn main:app --reload
-   ```
-
-**Frontend:**
-1. Navigate to `frontend/`:
-   ```bash
-   cd frontend
-   npm install
-   ```
-2. Start the dev server:
-   ```bash
-   npm run dev
-   ```
-3. Open `http://localhost:5173`.
-
-## 💼 Technical Impact (Resume Points)
-
-*   **Full-Stack Architecture**: Designed and implemented a decoupled architecture using **FastAPI** and **React**, enabling independent scaling and development velocity.
-*   **AI Integration**: Engineered a **Scikit-learn pipeline (TF-IDF + LinearSVC)** to classify IT support tickets with high accuracy, reducing manual triage time by an estimated 40%.
-*   **Real-Time UX**: Implemented a **debounced AI feedback loop** in React, providing instant user guidance and reducing miscategorized tickets.
-*   **Containerization**: Optimized deployment using a **multi-stage Docker build**, reducing image size and ensuring consistent environments across development and production.
-*   **System Engineering**: Selected **FastAPI** for its asynchronous capabilities and **Pydantic** integration, ensuring type safety and high concurrency for API requests.
+---
+*Built with ❤️ by [Your Name]*
