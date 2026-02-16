@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-ibm-blue-10 text-ibm-gray-100 font-sans antialiased;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-ibm-blue-50 text-white px-4 py-2 rounded shadow-sm hover:bg-ibm-blue-60 transition-colors duration-200 font-medium;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-2 border border-ibm-blue-20 rounded focus:outline-none focus:ring-2 focus:ring-ibm-blue-50 focus:border-transparent transition-shadow;
+  }
+
+  .card {
+    @apply bg-white rounded-lg shadow-sm border border-ibm-blue-20 p-6;
+  }
+
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+}
